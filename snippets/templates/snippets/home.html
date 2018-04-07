@@ -1,0 +1,30 @@
+{% extends 'snippets/base.html' %}
+
+{% block title %} iSnippets {% endblock %}
+
+{% block content %}
+
+  <div class="row">
+    <div class="col-sm-12">
+      <h1 class="text-center">iSnippets</h1>      
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <h4>View Snippets</h4>
+      <p>Below are some snippets that have already been created:</p>
+      {% if snippet_list %}
+        <ul class="list-group">
+        {% for snippet in snippet_list %} 
+          <a href='/detail/{{snippet.id}}'><li class="list-group-item">{{ snippet.title|capfirst }} built with {{snippet.language|capfirst}}</li></a>
+        {% endfor %}
+      </ul>
+      {% else %}
+        <p>No snippets yet.</p>
+      {% endif%}
+    </div>
+  </div>
+  
+
+{% endblock %}
