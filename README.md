@@ -8,12 +8,12 @@ This is a simple application in Python that allows users to store snippets for f
 In order to run this locally, clone this repo then:
 Create a virtual environment 
 ```
-virtualenv venv
+virtualenv env
 ```
 
 Activate the virtual environment  
 ```
-source venv/bin/activate
+source env/bin/activate
 ```
 
 Then while in the virtual environment... 
@@ -21,7 +21,11 @@ Then while in the virtual environment...
 Install the application requirements with either of the following commands
 ```
 pip3 install -r requirements.txt
-pip3 manage.py runserver
+```
+
+Run migrate
+```
+python3 manage.py migrate
 ```
 
 Run the server at PORT 8000
